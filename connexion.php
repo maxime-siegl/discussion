@@ -3,18 +3,21 @@
     if (isset($_POST['deco']))
     {
         session_destroy();
+        header('location:connexion.php');
     }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>NBA 2K</title>
+    <title>Team NBA Community/connexion</title>
     <link rel="stylesheet" href="discussion.css">
 </head>
-<body>
-    <header></header>
-    <main>
+<body id="connexion">
+    <header>
+        <?php include('include/header.php'); ?>
+    </header>
+    <main id="main_connexion">
         <?php
             if(isset($_SESSION['login']))
             {
@@ -30,13 +33,13 @@
             else
             {
         ?>
-                <form action="connexion.php" method="POST">
-                    <p>
+                <form action="connexion.php" method="POST" id="formulaire_connexion">
+                    <p id="infos_form_connexion">
                         <label for="login">Login</label>
                         <input type="text" name="login" id="login">
                         <label for="password">Password</label>
                         <input type="password" name="password" id="password">
-                        <input type="submit" value="Se Connecter" name="connexion" id="connexion" class="submit">
+                        <input type="submit" value="Se Connecter" name="connexion" class="submit">
                     </p>
                 </form>
         <?php
@@ -85,6 +88,8 @@
 
         ?>
     </main>
-    <footer></footer>
+    <footer>
+        <?php include('include/footer.php'); ?>
+    </footer>
 </body>
 </html>

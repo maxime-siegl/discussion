@@ -3,31 +3,34 @@
     if (isset($_POST['deco']))
     {
         session_destroy();
+        header('location:connexion.php');
     }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>NBA 2K</title>
+    <title>Team NBA Community/inscription</title>
     <link rel="stylesheet" href="discussion.css">
 </head>
-<body>
-    <header></header>
-    <main>
+<body id="inscription">
+    <header>
+        <?php include('include/header.php'); ?>
+    </header>
+    <main id="main_inscription">
         <?php
             $bdd = mysqli_connect("localhost", "root", "", "discussion");
 
             if(isset($_SESSION['login']) == false)
             {
         ?>
-                <form action="inscription.php" method="POST">
-                    <p>
+                <form action="inscription.php" method="POST" id="formulaire_inscription">
+                    <p id="infos_form_inscription">
                         <label for="login">Login</label>
                         <input type="text" name="login" id="login" required>
                         <label for="password">Mot de Passe</label>
                         <input type="password" name="password" id="password" required>
-                        <label for="confpw">Confirmation du Mot de Passe</label>
+                        <label for="confpw">Confirmation du MdP</label>
                         <input type="password" name="confpw" id="confpw" required>
                         <input type="submit" name="inscription" value="S'inscrire" class="submit">
                     </p>
@@ -73,7 +76,7 @@
             else
             {
         ?>
-                <p id="inscrit">
+                <p class="msg">
                     Mon petit doigt me dit que tu es déjà inscrit, au lieu de perdre du temps en t'inscrivant deux fois, viens <a href="discussion.php">discuter</a> avec nous !!
                 </p>
         <?php
@@ -81,6 +84,8 @@
             mysqli_close($bdd);
         ?>
     </main>
-    <footer></footer>
+    <footer>
+        <?php include('include/footer.php'); ?>
+    </footer>
 </body>
 </html>

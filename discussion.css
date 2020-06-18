@@ -1,0 +1,557 @@
+body /*All Page*/
+{
+}
+
+/*Animation titre*/
+@-webkit-keyframes bounceInDown {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -3000px, 0) scaleY(3);
+      transform: translate3d(0, -3000px, 0) scaleY(3);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 25px, 0) scaleY(0.9);
+      transform: translate3d(0, 25px, 0) scaleY(0.9);
+    }
+  
+    75% {
+      -webkit-transform: translate3d(0, -10px, 0) scaleY(0.95);
+      transform: translate3d(0, -10px, 0) scaleY(0.95);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, 5px, 0) scaleY(0.985);
+      transform: translate3d(0, 5px, 0) scaleY(0.985);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes bounceInDown {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -3000px, 0) scaleY(3);
+      transform: translate3d(0, -3000px, 0) scaleY(3);
+    }
+  
+    60% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 25px, 0) scaleY(0.9);
+      transform: translate3d(0, 25px, 0) scaleY(0.9);
+    }
+  
+    75% {
+      -webkit-transform: translate3d(0, -10px, 0) scaleY(0.95);
+      transform: translate3d(0, -10px, 0) scaleY(0.95);
+    }
+  
+    90% {
+      -webkit-transform: translate3d(0, 5px, 0) scaleY(0.985);
+      transform: translate3d(0, 5px, 0) scaleY(0.985);
+    }
+  
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+/*Fin animation*/
+
+
+/*Début Header*/
+header
+{
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    margin: 3%;
+}
+
+header #titre
+{
+    display: flex;
+    justify-content: center;
+    align-content: baseline;
+    margin-bottom: 0px;
+    text-decoration: underline;
+    font-size: 2.3em;
+    -webkit-animation-name: bounceInDown; /*Appel de l'animation*/
+    animation-name: bounceInDown; /*Appel de l'animation*/
+    -webkit-animation-duration: 1s; /*durée de l'animation*/
+    animation-duration: 1s;
+}
+
+header #N
+{
+    color: blue;
+}
+header #B
+{
+    color: white;
+}
+header #A
+{
+    color: red;
+}
+
+header nav
+{
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+header nav ul
+{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#header_left, 
+#header_right
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+#header_right
+{
+    width: 60%;
+}
+
+header a 
+{
+    text-decoration: none;
+    color: black;
+}
+
+#salle
+{
+    color: rgba(255, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px rgba(255, 255, 255, 0.45);
+}
+#salle:hover
+{
+    color: black;
+    text-shadow: 3px 3px 3px rgba(255, 0, 0, 0.65);
+}
+
+#parquet
+{
+    color: rgba(255, 255, 0, 0.5);
+    text-shadow: 2px 2px 2px rgba(128, 0, 128, 0.45);
+}
+#parquet:hover
+{
+    color: rgba(128, 0, 128);
+    text-shadow: 3px 3px 3px rgba(255, 255, 0, 0.65);
+}
+
+#vestiaire
+{
+    color: rgba(255, 255, 255, 0.5);
+    text-shadow: 2px 2px 2px rgba(0, 128, 0, 0.45);
+}
+#vestiaire:hover
+{
+    color: rgb(0, 128, 0);
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.65);
+}
+
+header button
+{
+    font-weight: bold;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: rgba(17, 0, 255, 0.7);
+    box-shadow: 2px 2px 2px rgba(255, 0, 0, 0.65);
+    text-shadow: 3px 3px 3px white;
+}
+header button:hover
+{
+    color: rgba(255, 0, 0, 0.65);
+    box-shadow: 2px 2px 2px rgba(17, 0, 255, 0.7);
+    text-shadow: 3px 3px 3px white;
+    cursor: pointer;
+}
+/*Fin Header*/
+
+/*Début Footer*/
+footer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: baseline;
+    margin: 3%;
+}
+
+footer a 
+{
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+footer a:hover
+{
+    color: blue;
+    text-shadow: 3px 3px 3px yellow;
+}
+
+#footer_left,
+#footer_middle,
+#footer_right
+{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    font-weight: bold;
+    height: 100%;
+}
+/*Fin Footer*/
+
+/*Commun page*/
+.msg
+{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4em;
+    background-color: orange;
+    color: black;
+    box-shadow: 3px 3px 3px red;
+    border-radius: 15px;
+}
+.msg a
+{
+    text-decoration: none;
+    color: black;
+}
+.msg a:hover
+{
+    color: white;
+    text-decoration: underline;
+}
+
+.submit
+{
+    width: 50%;
+    align-self: center;
+    margin-top: 2%;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 15px;
+}
+
+.submit:hover
+{
+    color: blue;
+    text-shadow: 3px 3px 3px white;
+    box-shadow: 4px 4px 4px rgba(255, 0, 0, 0.65);
+}
+/*Fin commun*/
+
+/*Index*/
+#index
+{
+    background-image: url("img/salle.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main_index
+{
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main_index h2
+{
+    text-align: center;
+}
+
+#main_index .description,
+#main_index .link,
+#main_index .link a
+{
+    color: black;
+    text-decoration: none;
+}
+
+#main_index .link a:hover
+{
+    color: blue;
+    text-shadow: 3px 3px 3px yellow;
+    font-weight: bold;
+}
+
+#main_index .description
+{
+    text-align: left;
+    margin-left: 4%;
+}
+
+#main_index .link
+{
+    text-align: right;
+    margin-right: 4%;
+    padding-bottom: 2%;
+}
+
+#main_index .icon_nba
+{
+    width: 3vW;
+    height: 5vh;
+    transition: transform .2s;
+}
+
+.icon_nba:hover
+{
+    transform: scale(1.5);
+    z-index: 100;
+}
+
+/*Fin index*/
+
+/*Chat*/
+#discussion
+{
+    background-image: url('img/mamba.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#main_discussion #titre_discussion
+{
+    background-color: rgba(201, 149, 8, 0.7);
+    text-align: right;
+    color: purple;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-left: 25%;
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+}
+
+#table
+{
+    display: flex;
+    justify-content: center;
+}
+
+#main_discussion tr, td, th
+{
+    background-color: rgba(201, 149, 8, 0.5);
+    border: 1px black solid;
+    border-radius: 15px;
+    text-align: center;
+}
+
+#main_discussion td
+{
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#login
+{
+    font-weight: bold;
+    color: purple;
+    font-size: 1.3em;
+    margin-bottom: 0;
+}
+
+#date
+{
+    text-decoration: underline;
+    margin-top: 0;
+}
+
+#message
+{
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#formulaire_discussion
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#infos_form_discussion
+{
+    background-color: rgba(128, 0, 128, 0.6);
+    border-radius: 15px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    backdrop-filter: blur(2px);
+    color: rgb(255, 187, 0);
+}
+
+#main_discussion textarea
+{
+    border-radius: 15px;
+    font-weight: bold;
+}
+/*Fin chat*/
+
+/*Profil*/
+#profil
+{
+    background-image: url('img/vestiaire.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#formulaire_profil
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#infos_form_profil
+{
+    background-color: rgba(135, 135, 135, 0.6);
+    border-radius: 15px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    backdrop-filter: blur(2px);
+    color: rgb(255, 255, 40);
+    text-decoration: underline;
+    text-decoration-color: blue;
+}
+
+#main_profil input
+{
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+/*Fin Profil*/
+
+/*Inscription*/
+#inscription
+{
+    background-image: url('img/logofranchise.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#formulaire_inscription
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#infos_form_inscription
+{
+    background-color: rgba(0, 0, 255, 0.60);
+    border-radius: 15px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    backdrop-filter: blur(2px);
+    color: rgb(255, 255, 40);
+}
+
+#main_inscription input
+{
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/*Fin inscription*/
+
+/*Connexion*/
+#connexion
+{
+    background-image: url('img/nbafranchises.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#formulaire_connexion
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#infos_form_connexion
+{
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    backdrop-filter: blur(3px);
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 2px rgb(255, 255, 255);
+}
+
+#main_connexion input
+{
+    border-radius: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+/*Fin connexion*/

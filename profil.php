@@ -3,28 +3,33 @@
     if (isset($_POST['deco']))
     {
         session_destroy();
+        header('location:connexion.php');
     }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>NBA 2K</title>
+    <title>Team NBA Community/profil</title>
     <link rel="stylesheet" href="discussion.css">
 </head>
-<body>
-    <header></header>
-    <main>
+<body id="profil">
+    <header>
+        <?php include('include/header.php'); ?>
+    </header>
+    <main id="main_profil">
         <?php
             if(isset($_SESSION['login']))
             {
+                $log = $_SESSION['login'];
+
                 $bdd = mysqli_connect("localhost", "root", "", "discussion");
-                $info_login = "SELECT * FROM utilisateurs WHERE login = '$_SESSION['login']'";
-                $recup_info = mysqli_query($bdd, $info_log);
+                $info_login = "SELECT * FROM utilisateurs WHERE login = '$log' ";
+                $recup_info = mysqli_query($bdd, $info_login);
                 $info_utilisateur = mysqli_fetch_all($recup_info, MYSQLI_ASSOC);
         ?>
-                <form action="connexion.php" method="POST">
-                    <p>
+                <form action="profil.php" method="POST" id="formulaire_profil">
+                    <p id="infos_form_profil">
                         <label for="login">Login</label>
                         <input type="text" name="login" id="login" value="<?php echo $info_utilisateur[0]['login'] ?>" >
                         <label for="mdpactuel">Mot de Passe actuel</label>
@@ -44,15 +49,16 @@
                         $login = $_POST['login'];
                         $id = $_SESSION['id'];
 
-                        $verif_log = "SELECT COUNT(*) AS all FROM utilisateurs WHERE login = '$login'";
+                        $verif_log = "SELECT COUNT(*) AS num FROM utilisateurs WHERE login = '$login'";
                         $verif = mysqli_query($bdd, $verif_log);
                         $info_log = mysqli_fetch_all($verif, MYSQLI_ASSOC);
 
-                        if($info_log[0]['all'] == 0 || $login == $_SESSION['login'])
+                        if($info_log[0]['num'] == 0 || $login == $_SESSION['login'])
                         {
                             $update = "UPDATE utilisateurs SET login = '$login' WHERE id = '$id'";
                             $up = mysqli_query($bdd, $update);
                             $_SESSION['login'] = $_POST['login'];
+                            header('location:profil.php');
                         }
                         else
                         {
@@ -70,6 +76,7 @@
                                 $mdpupdate = password_hash($_POST['newmdp'], PASSWORD_BCRYPT);
                                 $mdpup = "UPDATE utilisateurs SET password = '$mdpupdate' WHERE id = '$id'";
                                 $querymdpup = mysqli_query($bdd, $mdpup);
+                                $_SESSION['password'] = $mdpupdate;
                             }
                             else
                             {
@@ -102,6 +109,8 @@
         ?>
 
     </main>
-    <footer></footer>
+    <footer>
+        <?php include('include/footer.php'); ?>
+    </footer>
 </body>
 </html>
